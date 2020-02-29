@@ -1,0 +1,4 @@
+<h1>My first component is working :) </h1>
+<app-todo-item *ngFor='let todo of todos' [todo]="todo"> <!--This is a loop that itereates over my array of todos-->
+    <li>{{ todo.title}}</li> <!--Each of the elements of the list we are iterating-->
+</app-todo-item>
