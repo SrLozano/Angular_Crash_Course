@@ -21,7 +21,7 @@ export class TodoItemComponent implements OnInit {
     }
 
     return classes
-  } 
+  }
 
   // OnToggle
   onToggle(todo){
@@ -30,7 +30,7 @@ export class TodoItemComponent implements OnInit {
   }
 
   onDelete(todo){
-    
+
     console.log('Deleted');
   }
 }
