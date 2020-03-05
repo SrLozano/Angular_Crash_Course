@@ -1,5 +1,6 @@
-import { Component, OnInit, Input} from '@angular/core'; //It's necessary to add the input
+import { Component, OnInit, Input, EventEmitter, Output} from '@angular/core'; //It's necessary to add the input
 import { Todo } from 'src/app/models/Todo';
+import { TodoService } from '../../services/todo.service'
 
 @Component({
   selector: 'app-todo-item',
@@ -8,7 +9,8 @@ import { Todo } from 'src/app/models/Todo';
 })
 export class TodoItemComponent implements OnInit {
   @Input() todo: Todo;
-  constructor() { }
+  @Output() deleteTodo: EventEmitter<Todo> = new EventEmitter();
+  constructor(private todoService:TodoService) { }
 
   ngOnInit(): void {
   }
@@ -25,12 +27,16 @@ export class TodoItemComponent implements OnInit {
 
   // OnToggle
   onToggle(todo){
-    todo.complete = !todo.completed;
+    todo.completed = !todo.completed;
     console.log('toggle'); //Just to check that is called
+    //Toggle on server
+    this.todoService.toggleCompleted(todo).subscribe(todo =>
+      console.log(todo));
   }
 
+  //On Delete
   onDelete(todo){
-    
+    this.deleteTodo.emit(todo);
     console.log('Deleted');
   }
 }
