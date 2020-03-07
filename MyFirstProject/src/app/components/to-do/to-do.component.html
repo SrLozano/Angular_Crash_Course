@@ -1,5 +1,8 @@
-<h1>My first component is working :) </h1>
+<h1>Everything is working using components!</h1>
+<h2 align = "center">Feel the Angular power</h2>
+<br>
 <app-add-todo (addTodo)="addTodo($event)"></app-add-todo>
+<br>
 <app-todo-item 
     *ngFor='let todo of todos' 
     [todo]="todo"

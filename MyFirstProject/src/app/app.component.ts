@@ -7,11 +7,11 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   //Here we have some variables we are gonna use
-  title = 'Car-Checklist Fake';
+  title = 'Fake title because this is one is going to be changed';
   authors = 'Mario y Enrique';
 
   constructor(){
-    this.title = 'Car-Checklist'; //This is load before painting the web so we can make some changes 
+    this.title = 'M&E Checklist '; //This is load before painting the web so we can make some changes 
     console.log(123);
   }
 
