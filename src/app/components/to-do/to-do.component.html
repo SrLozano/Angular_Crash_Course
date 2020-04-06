@@ -4,10 +4,10 @@
 <app-add-todo (addTodo)="addTodo($event)"></app-add-todo>
 <br>
 <app-todo-item 
-    *ngFor='let todo of todos' 
+    *ngFor='let todo of todos'
     [todo]="todo"
     (deleteTodo)="deleteTodo($event)"
-    > 
+    >
     
     <!--This is a loop that itereates over my array of todos-->
     <li>{{ todo.title}}</li> <!--Each of the elements of the list we are iterating-->

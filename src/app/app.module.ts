@@ -11,6 +11,8 @@ import { TodoItemComponent } from './components/todo-item/todo-item.component';
 import { HeaderComponent } from './components/layout/header/header.component';
 import { AddTodoComponent } from './components/add-todo/add-todo.component';
 import { AboutComponent } from './components/pages/about/about.component';
+import { AngularFireModule } from '@angular/fire';
+import { AngularFirestoreModule } from '@angular/fire/firestore'; import { environment } from '../environments/environment';
 
 @NgModule({
   declarations: [
@@ -25,9 +27,12 @@ import { AboutComponent } from './components/pages/about/about.component';
     BrowserModule,
     AppRoutingModule, 
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    AngularFireModule.initializeApp(environment.firebase),
+    AngularFirestoreModule
   ],
   providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
+
